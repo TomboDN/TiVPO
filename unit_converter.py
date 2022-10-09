@@ -63,7 +63,15 @@ class Converter:
 
     @staticmethod
     def is_unit_of_mode(mode, unit):
-        pass
+        match mode.lower():
+            case "длина":
+                return unit.lower() in UnitDict.length_dict
+            case "объём":
+                return unit.lower() in UnitDict.volume_dict
+            case "масса":
+                return unit.lower() in UnitDict.mass_dict
+            case _:
+                return False
 
     @staticmethod
     def is_float_in_string(string):
