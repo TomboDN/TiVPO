@@ -83,7 +83,12 @@ class Converter:
 
     @staticmethod
     def convert(mode, unit1, unit2, value):
-        pass
+        if Converter.is_mode(mode) and Converter.is_unit_of_mode(mode, unit1) and Converter.is_float_in_string(
+                value) and Converter.is_unit_of_mode(mode, unit2):
+            return round((float(value) * UnitDict.length_dict[unit1.lower()]) / (UnitDict.length_dict[unit2.lower()]),
+                         11)
+        else:
+            return None
 
 
 if __name__ == '__main__':
