@@ -75,7 +75,11 @@ class Converter:
 
     @staticmethod
     def is_float_in_string(string):
-        pass
+        try:
+            float(string)
+            return True
+        except ValueError:
+            return False
 
     @staticmethod
     def convert(mode, unit1, unit2, value):
