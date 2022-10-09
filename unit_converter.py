@@ -51,7 +51,15 @@ class UnitDict:
 class Converter:
     @staticmethod
     def is_mode(mode):
-        pass
+        match mode.lower():
+            case "длина":
+                return True
+            case "объём":
+                return True
+            case "масса":
+                return True
+            case _:
+                return False
 
     @staticmethod
     def is_unit_of_mode(mode, unit):
